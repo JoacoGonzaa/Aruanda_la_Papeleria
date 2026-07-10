@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '../config/supabaseClient';
 import logo from '../assets/Logo_Aruanda_LP.jpeg';
+import { Link } from 'react-router-dom';
+// ... dentro de tu JSX:
+<Link to="/admin" style={{ color: '#94a3b8', fontSize: '12px' }}>⚙️ Acceso Interno</Link>
 
 export default function TiendaCliente() {
   const [productos, setProductos] = useState([]);
