@@ -38,7 +38,7 @@ export default function TiendaCliente() {
   };
 
   const enviarPedidoWhatsApp = () => {
-    const telefono = "521234567890"; // ⚠️ Pon tu número real aquí
+    const telefono = "56964500721"; // ⚠️ Pon tu número real aquí
     let mensaje = "🛒 *¡Hola! Me gustaría hacer el siguiente pedido:*\n\n";
     carrito.forEach(item => {
       mensaje += `▪️ *${item.cantidad}x* ${item.nombre} - $${(item.precio * item.cantidad).toFixed(2)}\n`;

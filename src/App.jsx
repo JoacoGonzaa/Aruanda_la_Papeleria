@@ -6,9 +6,12 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-  <Route path="/" element={<TiendaCliente />} />
-  <Route path="/admin" element={<AdminPanel />} /> {/* O el nombre que tenga tu componente */}
-</Routes>
+        {/* Ruta para los clientes (Página principal) */}
+        <Route path="/" element={<TiendaCliente />} />
+        
+        {/* Ruta secreta/exclusiva para el administrador */}
+        <Route path="/admin" element={<PanelAdmin />} />
+      </Routes>
     </BrowserRouter>
   );
 }
