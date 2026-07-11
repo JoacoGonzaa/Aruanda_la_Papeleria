@@ -3,24 +3,17 @@ import TiendaCliente from './pages/TiendaCliente';
 import PanelAdmin from './pages/PanelAdmin';
 
 function App() {
-  // Detecta si es el sitio del administrador
-  const esAdminSite = import.meta.env.VITE_IS_ADMIN === 'true';
-
   return (
     <Routes>
-      {esAdminSite ? (
-        <>
-          {/* En la web de administración, la raíz "/" muestra el panel directamente */}
-          <Route path="/" element={<PanelAdmin />} />
-          <Route path="/tienda" element={<TiendaCliente />} />
-        </>
-      ) : (
-        <>
-          {/* En la web de clientes, se mantiene todo exactamente como antes */}
-          <Route path="/" element={<TiendaCliente />} />
-          <Route path="/admin" element={<PanelAdmin />} />
-        </>
-      )}
+      {/* La raíz "/" cargará la tienda de clientes */}
+      <Route path="/" element={<TiendaCliente />} />
+      
+      {/* Esta ruta "/admin" cargará tu panel */}
+      <Route path="/admin" element={<PanelAdmin />} />
+
+      {/* RUTA DE RESPALDO: Si entras a la página de administración directa, 
+          también responderá en la raíz del sitio admin */}
+      <Route path="/admin-directo" element={<PanelAdmin />} />
     </Routes>
   );
 }
