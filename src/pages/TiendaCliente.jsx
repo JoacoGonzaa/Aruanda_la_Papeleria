@@ -3,7 +3,7 @@ import { supabase } from '../config/supabaseClient';
 import logo from '../assets/Logo_Aruanda_LP.jpeg';
 import { Link } from 'react-router-dom';
 // ... dentro de tu JSX:
-<Link to="/admin" style={{ color: '#94a3b8', fontSize: '12px' }}>⚙️ Acceso Interno</Link>
+<Link to="/chanchi" style={{ color: '#94a3b8', fontSize: '12px' }}>⚙️ Acceso Interno</Link>
 
 export default function TiendaCliente() {
   const [productos, setProductos] = useState([]);
@@ -38,12 +38,12 @@ export default function TiendaCliente() {
   };
 
   const enviarPedidoWhatsApp = () => {
-    const telefono = "56964500721"; // ⚠️ Pon tu número real aquí
-    let mensaje = "🛒 *¡Hola! Me gustaría hacer el siguiente pedido:*\n\n";
+    const telefono = "56935119635"; // 
+    let mensaje = " *¡Hola! Me gustaría hacer el siguiente pedido:*\n\n";
     carrito.forEach(item => {
-      mensaje += `▪️ *${item.cantidad}x* ${item.nombre} - $${(item.precio * item.cantidad).toFixed(2)}\n`;
+      mensaje += ` *${item.cantidad}x* ${item.nombre} - $${(item.precio * item.cantidad).toFixed(2)}\n`;
     });
-    mensaje += `\n💰 *Total Estimado:* $${calcularTotal()}\n\n¿Tienen disponibilidad de estos artículos?`;
+    mensaje += `\n *Total Estimado:* $${calcularTotal()}\n\n¿Tienen disponibilidad de estos artículos?`;
 
     const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
@@ -85,7 +85,7 @@ export default function TiendaCliente() {
               background: 'linear-gradient(135deg, #2563eb, #7c3aed)',
               boxShadow: '0 0 15px rgba(37, 99, 235, 0.4)'
             }}>
-              <img src={logo} alt="Logo" style={{ height: '50px', width: '50px', borderRadius: '50%', objectFit: 'cover', display: 'block' }} />
+              <img src={logo} alt="Logo" style={{ height: '100px', width: '100px', borderRadius: '50%', objectFit: 'cover', display: 'block' }} />
             </div>
             <h1 style={{ margin: 0, fontSize: '24px', fontWeight: '700', color: '#ffffff' }}>
                Aruanda La Papelería

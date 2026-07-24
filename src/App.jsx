@@ -9,11 +9,11 @@ function App() {
       <Route path="/" element={<TiendaCliente />} />
       
       {/* Esta ruta "/admin" cargará tu panel */}
-      <Route path="/admin" element={<PanelAdmin />} />
+      <Route path="/chanchi" element={<PanelAdmin />} />
 
       {/* RUTA DE RESPALDO: Si entras a la página de administración directa, 
           también responderá en la raíz del sitio admin */}
-      <Route path="/admin-directo" element={<PanelAdmin />} />
+      <Route path="/chanchi-directo" element={<PanelAdmin />} />
     </Routes>
   );
 }
